@@ -1,6 +1,39 @@
-input.calibrateCompass()
+let kompasje = 0
 basic.forever(function () {
-    if (input.compassHeading() > 45 && input.compassHeading() < 135) {
-        basic.showArrow(ArrowNames.East)
+    kompasje = input.compassHeading()
+})
+basic.forever(function () {
+    if (kompasje > 315 && kompasje < 360 || kompasje > 0 && kompasje < 45) {
+        basic.showLeds(`
+            . . # . .
+            . . # . .
+            # . # . #
+            . # # # .
+            . . # . .
+            `)
+    } else if (kompasje < 135 && kompasje > 45) {
+        basic.showLeds(`
+            . . # . .
+            . . . # .
+            # # # # #
+            . . . # .
+            . . # . .
+            `)
+    } else if (kompasje < 225 && kompasje > 135) {
+        basic.showLeds(`
+            . . # . .
+            . # # # .
+            # . # . #
+            . . # . .
+            . . # . .
+            `)
+    } else if (kompasje < 315 && kompasje > 225) {
+        basic.showLeds(`
+            . . # . .
+            . # . . .
+            # # # # #
+            . # . . .
+            . . # . .
+            `)
     }
 })
