@@ -11,15 +11,17 @@ basic.forever(function () {
             . # # # .
             . . # . .
             `)
-    } else if (kompasje < 135 && kompasje > 45) {
+    }
+    if (kompasje < 135 && kompasje > 45) {
         basic.showLeds(`
             . . # . .
-            . . . # .
+            . # . . .
             # # # # #
-            . . . # .
+            . # . . .
             . . # . .
             `)
-    } else if (kompasje < 225 && kompasje > 135) {
+    }
+    if (kompasje < 225 && kompasje > 135) {
         basic.showLeds(`
             . . # . .
             . # # # .
@@ -27,12 +29,13 @@ basic.forever(function () {
             . . # . .
             . . # . .
             `)
-    } else if (kompasje < 315 && kompasje > 225) {
+    }
+    if (kompasje < 315 && kompasje > 225) {
         basic.showLeds(`
             . . # . .
-            . # . . .
+            . . . # .
             # # # # #
-            . # . . .
+            . . . # .
             . . # . .
             `)
     }
